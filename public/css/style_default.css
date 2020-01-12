@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+}
+
+ 
+.container{
+        
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+
+.background{
+    position: relative;
+    width: 1858px;
+    height: 977px;
+    background: #31344e url("../images/header__logo.jpg") center no-repeat;
+    background-size: cover;
+}
+.autorization{
+    position: absolute;
+    margin-top: 350px;
+}
+
+.header__logo{
+    position: absolute;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.error404{
+    position: absolute;
+}
+
+.checking{
+    position: absolute;
+    margin-top:250px;
+}
