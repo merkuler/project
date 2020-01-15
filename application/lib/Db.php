@@ -17,37 +17,39 @@ class Db
 
 
   public function query($sql,$params=[]){
-    $stmt= $this->db->prepare($sql);
-    if(!empty($params)){
-      foreach ($params as $key => $val) {
-        $stmt->bindValue(':'.$key,$val);
-      }
+  $stmt= $this->db->prepare($sql);
+  if(!empty($params)){
+    foreach ($params as $key => $val) {
+      $stmt->bindValue(':'.$key,$val);
     }
-    debug($stmt);
-    
-    $stmt->execute();
-    return $stmt;
+  }
+
+  $stmt->execute();
+  return $stmt;
 }
 
-public function queryExecute($sql){
-  
+public function queryRegisterExecute($sql){
   $stmt= $this->db->prepare($sql);
   $stmt->execute();
-  
-  debug($stmt);
-
+  header('Location: /account/register');
 }
 
+public function queryAutorizationExecute($sql){
+  $stmt= $this->db->prepare($sql);
+  $stmt->execute();
+  $result =$stmt;
+  return $result->fetchAll(PDO::FETCH_ASSOC);
+}
 
-  public function  row($sql,$params=[]){
-    $result = $this->query ($sql,$params);
-    return $result->fetchAll(PDO::FETCH_ASSOC);
-  }
+public function  row($sql,$params=[]){
+  $result = $this->query ($sql,$params);
+  return $result->fetchAll(PDO::FETCH_ASSOC);
+}
 
-  public function  column($sql,$params=[]){
-    $result = $this->query ($sql,$params);
-    return $result->fetchColumn();
-  }
+public function  column($sql,$params=[]){
+  $result = $this->query ($sql,$params);
+  return $result->fetchColumn();
+}
   }
 
  ?>

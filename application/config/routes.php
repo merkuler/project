@@ -25,11 +25,24 @@ return [
       'controller'=> 'main',
       'action'=> 'contact',
   ],
+
   'account/check'=>
   [
     'controller'=> 'account',
     'action'=> 'check',
-  ]
+  ],
+
+  'account/autorization'=>
+  [
+    'controller'=> 'account',
+    'action'=> 'autorization',
+  ],
+
+  'account/exit'=>
+  [
+    'controller'=> 'account',
+    'action'=> 'exit',
+  ],
 
 ];
 
